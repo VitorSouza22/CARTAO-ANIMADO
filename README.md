@@ -56,6 +56,7 @@
 
     .no {
       background-color: #ff6666;
+      animation: moveButton 2s infinite; /* Animação para o botão 'Não' */
     }
 
     .yes:hover {
@@ -66,12 +67,26 @@
       background-color: #cc4d4d;
     }
 
+    @keyframes moveButton {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(15px); }
+      50% { transform: translateX(0); }
+      75% { transform: translateX(-15px); }
+      100% { transform: translateX(0); }
+    }
+
     .response {
       margin-top: 20px;
       font-size: 18px;
       color: #333;
       font-weight: bold;
       display: none;
+    }
+    
+    /* Desabilitar interação com o botão 'Não' */
+    .no:disabled {
+      pointer-events: none;
+      opacity: 0.5;
     }
   </style>
 </head>
@@ -81,7 +96,7 @@
     <div class="message">Quer jantar comigo?</div>
     <div class="buttons">
       <button class="yes" onclick="showResponse('yes')">Sim</button>
-      <button class="no" onclick="showResponse('no')">Não</button>
+      <button class="no" id="noButton" onclick="showResponse('no')" disabled>Não</button>
     </div>
     <div class="response" id="responseMessage"></div>
   </div>
@@ -89,6 +104,8 @@
   <script>
     function showResponse(answer) {
       const responseMessage = document.getElementById('responseMessage');
+      const noButton = document.getElementById('noButton');
+      
       if (answer === 'yes') {
         responseMessage.textContent = 'Beleza, te pego às 22:00!';
         responseMessage.style.color = '#66b3ff';
@@ -97,6 +114,9 @@
         responseMessage.style.color = '#ff6666';
       }
       responseMessage.style.display = 'block';
+      
+      // Desabilitar o botão "Não" ao clicar
+      noButton.disabled = true;
     }
   </script>
 
