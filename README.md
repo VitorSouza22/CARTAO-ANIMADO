@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedido Especial</title>
+  <title>Noite Feliz</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -92,7 +92,7 @@
 <body>
 
   <div class="card">
-    <div class="message">Quer jantar comigo?</div>
+    <div class="message">Noite Feliz!</div>
     <div class="buttons">
       <button class="yes" onclick="showResponse('yes')">Sim</button>
       <button class="no" id="noButton" onclick="showResponse('no')" disabled>Não</button>
