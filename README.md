@@ -13,41 +13,43 @@
       height: 100vh;
       background: linear-gradient(45deg, #ff9a9e, #fad0c4);
       margin: 0;
+      padding: 0;
     }
 
     .card {
       width: 350px;
-      height: 300px;
+      height: 350px;
       background: white;
       border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
 
     .message {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
       color: #333;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .buttons {
       display: flex;
-      gap: 10px;
+      gap: 20px;
     }
 
     .buttons button {
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 12px 25px;
+      font-size: 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
 
     .yes {
@@ -61,10 +63,12 @@
 
     .yes:hover {
       background-color: #4d99cc;
+      transform: scale(1.1);
     }
 
     .no:hover {
       background-color: #cc4d4d;
+      transform: scale(1.1);
     }
 
     @keyframes moveButton {
@@ -77,16 +81,11 @@
 
     .response {
       margin-top: 20px;
-      font-size: 18px;
-      color: #333;
+      font-size: 20px;
       font-weight: bold;
+      color: #333;
       display: none;
-    }
-    
-    /* Desabilitar interação com o botão 'Não' */
-    .no:disabled {
-      pointer-events: none;
-      opacity: 0.5;
+      transition: opacity 0.3s;
     }
   </style>
 </head>
